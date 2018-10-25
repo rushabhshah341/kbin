@@ -1,0 +1,533 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Collaboratory</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!--import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anaheim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        #search_box {
+            border-right: 0;
+        }
+
+        .kbin_badge-header {
+            border-radius: 0px;
+            padding-top: 1.5vh;
+            padding-bottom: 1.5vh;
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+
+
+        .kbin_badge-text {
+            color: grey;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .card .card-img-top {
+            border-radius: 0px;
+        }
+
+        .card {
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.19);
+        }
+
+
+        @media (min-width: 576px) {
+            /* sm */
+            .card-columns {
+                column-count: 1;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+            .card-columns {
+                column-count: 2;
+            }
+        }
+
+
+        @media (min-width: 992px) {
+            /* lg */
+            .card-columns {
+                column-count: 2;
+
+            }
+        }
+
+        @media (min-width: 1200px) {
+            /* xl */
+            .card-columns {
+                column-count: 3;
+
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Main -->
+    <div class="container-fluid " style="background-color:#9165ab; height:5px"></div>
+    <br>
+    <div class="container">
+        <div class="row justify-content-between">
+
+
+            <div class="col-12 col-md-4">
+                <img src="img/logo.png" alt="" height="65px">
+            </div>
+            <div class="col-12 mt-2 mt-md-0 col-md-6 align-self-center">
+                <h3 class="kbin_h3">Global teams extending the limits of the possible in education.</h3>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+    <div class="containter top-buffer">
+
+    </div>
+
+    <nav class="navbar navbar-expand-xl navbar-light bg-light justify-content-center">
+
+        <!--TODO : Show this only on smaller devices
+             <a class="navbar-nav kbin_nav-link .d-none" href="#">HOME</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">HOME
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link kbin_nav-link-active" href="collaboratory.html">COLLABORATORY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rbi.html">RESEARCH-BASED INNOVATION</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="post-collaboratory.html">BUILDING CULTURAL CAPACITY FOR INNOVATION</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="kb.html">KNOWLEDGE FORUM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contributors.html">CONTRIBUTORS</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- /nav -->
+
+    <div>
+        <div class="row kbin_login-bar">
+            <div class="col-12 col-sm-8 col-md-9 col-lg-10 kbin_logged-in-info">
+                <div class="media">
+                    <img class=" mr-3 float-left" src="img/collaboratory/profile_pic.jpg" alt="Profile Picture">
+                    <div class="media-body align-self-center">
+                        <div class="kbin_teacher-name mt-0">Daniel Smith</div>
+                        <div class="kbin_teacher-info">
+                            Principal of Greenwood high School - Liverpool, UK
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-2 no-padding ">
+                <button class="btn kbin_btn-orange" onclick="window.location.href='create-challenge.html'" style="height:100%;width:100%">Create Challenge</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- /Login Info-->
+    <div class="container">
+        <br>
+        <div class="row top-buffer">
+            <div class="col-sm-12 col-md-6 align-self-center">
+                <h5 class="align-middle ">Open Innovation Challenges</h5>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <form class="form-inline float-md-right" style="padding:0;">
+
+
+                    <input type="text" class="form-control kbin_form-control col-12 col-sm-6 col-md-8" id="search_box" placeholder="Search Something here">
+                    <button type="submit" class="btn kbin_btn-primary mx-sm-0 col-12 col-sm-auto  my-1 my-sm-0 mx-auto">Search</button>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- /search container -->
+    <br>
+    <div class="container">
+        <ul class="nav justify-content-center">
+            <li class="nav-item kbin_nav-item active">
+                <a class="nav-link " href="#">CURRICULAR AREA</a>
+            </li>
+            <li class="nav-item kbin_nav-item">
+                <a class="nav-link" href="#">CONTEXT</a>
+            </li>
+            <li class="nav-item kbin_nav-item">
+                <a class="nav-link" href="#">LANGUAGE</a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- /Tab Nav -->
+
+    <div class="container">
+        <div class="row">
+            <br>
+        </div>
+        <div class="row justify-content-center">
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Computer Science</a>
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Engineering</a>
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Mathematics</a>
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Language arts</a>
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Music</a>
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Science</a>
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Social Studies</a>
+            <a href="#" class="badge kbin_badge-primary kbin_badge-header mb-1 ml-1">Teacher Education</a>
+        </div>
+    </div>
+    <!-- /Pills-->
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="card-columns">
+            <!-- Card -->
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
+                            <span class="kbin_grey-text">Posted By</span>
+                            <span class="kbin_collaboratory-author-name">Jiawan Zhang</span>
+                            <div class="kbin_grey-text">Professor at University At Albany, NY</div>
+                        </div>
+                        <div class="col-4 my-auto">
+                            <button type="button" class="float-right btn kbin_btn-secondary ">Build On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="kbin_grey-text">August 07,2018 10:00am</p>
+                        <h5>Grade 5 Student reflected on their Experience as Collaborative Knowledge Builders</h5>
+                    </div>
+                    <p class="card-text">
+                        See how students from Guinderland elementary school 's collorating classrooms described their creative and collaborative
+                        learning of core scientific topics.
+
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">23</span>
+                            <div class="kbin_badge-text">DESIGN ITERATIONS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">4</span>
+                            <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">5</span>
+                            <div class="kbin_badge-text">REQUESTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Card -->
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
+                            <span class="kbin_grey-text">Posted By</span>
+                            <span class="kbin_collaboratory-author-name">Bodong Chen</span>
+                            <div class="kbin_grey-text">Professor at University of Minessota - Minneapolis,US</div>
+                        </div>
+                        <div class="col-4 my-auto">
+                            <button type="button" class="float-right btn kbin_btn-secondary">Build On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="kbin_grey-text">August 07,2018 10:00am</p>
+                        <h5>Breaking Development Barriers, Promissing Ideas</h5>
+                    </div>
+
+                    <p class="card-text">
+                        A Promissing idea tool was integrated into Knowl;edge forum. Thias tool included three components: a highlight fewature,
+                        an idera aggregation window and an exporting feature enabling ewxport of select subsets of promissingf
+                        ideas to new workspaces for further knowledge work.
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">9</span>
+                            <div class="kbin_badge-text">DESIGN ITERATIONS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">15</span>
+                            <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">22</span>
+                            <div class="kbin_badge-text">REQUESTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
+                            <span class="kbin_grey-text">Posted By</span>
+                            <span class="kbin_collaboratory-author-name">Mireia Montane</span>
+                            <div class="kbin_grey-text">Col-legi de Catalunia - Barcelona, ES</div>
+                        </div>
+                        <div class="col-4 my-auto">
+                            <button type="button" class="float-right btn kbin_btn-secondary">Build On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="kbin_grey-text">August 07,2018 10:00am</p>
+                        <h5>COMconeixer: An international experience of knowledge building.</h5>
+                    </div>
+                    <p class="card-text">
+                        COMconeixer, translated as "common building of knowledge", is a pioneer of KB in Catalona.
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">5</span>
+                            <div class="kbin_badge-text">DESIGN ITERATIONS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">9</span>
+                            <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">7</span>
+                            <div class="kbin_badge-text">REQUESTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
+                            <span class="kbin_grey-text">Posted By</span>
+                            <span class="kbin_collaboratory-author-name">Sandy Mcauley</span>
+                            <div class="kbin_grey-text">Professor at University of Prince Edward Island - PEI, CA</div>
+                        </div>
+                        <div class="col-4 my-auto">
+                            <button type="button" class="float-right btn kbin_btn-secondary">Build On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="kbin_grey-text">August 07,2018 10:00am</p>
+                        <h5>Akuttujuuk: Knowledge Building for Bilingual Education in Inuit Nunangat</h5>
+                    </div>
+                    <p class="card-text">
+                        Akuttujuuk is a two-year design experiment which explored the potential of networked technologies and past experiences with
+                        Knowledge Building in the Canadian arctic to address the problem of effective bilingual education
+                        for Inuit
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">17</span>
+                            <div class="kbin_badge-text">DESIGN ITERATIONS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">33</span>
+                            <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">16</span>
+                            <div class="kbin_badge-text">REQUESTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
+                            <span class="kbin_grey-text">Posted By</span>
+                            <span class="kbin_collaboratory-author-name">Glenn Wagner</span>
+                            <div class="kbin_grey-text">Grade 12 Physics teacher, CA</div>
+                        </div>
+                        <div class="col-4 my-auto">
+                            <button type="button" class="float-right btn kbin_btn-secondary">Build On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="kbin_grey-text">August 07,2018 10:00am</p>
+                        <h5>Knowledge Building in Modern Physics: A 21st Century Approach</h5>
+                    </div>
+                    <p class="card-text">
+                        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem
+                        ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the
+                        years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">17</span>
+                            <div class="kbin_badge-text">DESIGN ITERATIONS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">33</span>
+                            <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">16</span>
+                            <div class="kbin_badge-text">REQUESTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
+                            <span class="kbin_grey-text">Posted By</span>
+                            <span class="kbin_collaboratory-author-name">Kwok-Wing Lai</span>
+                            <div class="kbin_grey-text">Professor at University of Otago - Dunedin, NZ</div>
+                        </div>
+                        <div class="col-4 my-auto">
+                            <button type="button" class="float-right btn kbin_btn-secondary">Build On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="kbin_grey-text">August 07,2018 10:00am</p>
+                        <h5>Designing Knowledge Building Communities in Schools</h5>
+                    </div>
+                    <p class="card-text">
+                        This book outlines the experiuences of a number of teacherss usingknwoedge building approaches with their students in a compreshensive
+                        examinsation of future focused practise in today's classroiom.
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">7</span>
+                            <div class="kbin_badge-text">DESIGN ITERATIONS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">12</span>
+                            <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="badge badge-pill kbin_badge-secondary">8</span>
+                            <div class="kbin_badge-text">REQUESTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /Card columns -->
+
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <p>Why is this necessary? We will just load the next on scroll</p>
+        </div>
+        <div class="row">
+
+            <button class=" mx-auto btn kbin_btn-orange">Load More...</button>
+
+        </div>
+    </div>
+    <div class="container-fluid kbin_site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <p>
+                        <br>
+                        <i class="far fa-copyright"></i>2018 Knowledge Building Innovation Network.All Rights Reserved
+                    </p>
+                </div>
+                <div class="col-12 col-md-3">
+                    <span style="font-size:3em; color:#3b5998" class="float-right              float-md-none">
+                        <i class="fab fa-facebook-square"></i>
+                    </span>
+                    <span style="font-size:3em; color:#00aced" class="float-right mx-2 mx-md-0 float-md-none">
+                        <i class="fab fa-twitter-square"></i>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

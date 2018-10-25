@@ -1,10 +1,17 @@
 {
   "extends": "../tsconfig.json",
+  "compileOnSave": false,
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": []
+    "types": [
+      "jasmine",
+      "core-js",
+      "node"
+    ]
   },
   "exclude": [
+    "node_modules",
+    "dist",
     "test.ts",
     "**/*.spec.ts"
   ]

@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  subDomain: "kf6-test.rit",
+  apiVersion: '1.0',
+  runtime: {
+    apiUrl: "http://localhost:4024",
+    authBaseUrl: 'http://localhost:4024'
+    }
 };
 
 /*

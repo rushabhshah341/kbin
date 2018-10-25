@@ -1,0 +1,241 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+.top-buffer {
+    margin-top: 20px;
+}
+h2{
+    font-family: 'Anaheim', sans-serif, helvetica;
+    
+    font-weight: 500;
+    opacity: 0.9;
+    color: #3b1347;
+}
+h5{
+    color: #3c1048;
+    font-family: 'Anaheim', sans-serif, helvetica;
+    font-size:1.5rem;
+    
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #9165ab;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400 ;
+    font-size: 1rem;
+}
+
+.kbin_grey-text {
+    color: gray;
+    font-size: 0.8rem;
+}
+.no-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.kbin_h3 {
+    font-family: 'Anaheim', sans-serif, helvetica;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    color: #3b1347;
+}
+
+
+a.kbin_nav-link-active {
+    color: #3b1347 !important;
+    font-weight: bold !important;
+
+}
+.kbin_site-footer {
+    font-family: 'Roboto', sans-serif;
+    background-color: #efefef;
+}
+
+.kbin_site-footer p {
+
+    color: #808080
+}
+
+.kbin_btn-primary{
+    border-radius: 0;
+    background-color: #3b1347;
+    color: white;
+    font-family:'Anaheim', sans-serif, helvetica;
+    padding-left: 1.5rem;
+    padding-right:1.5rem;
+    font-size: 1.05rem;
+    margin-left:-1vw; 
+    text-transform: uppercase;
+}
+.kbin_btn-secondary{
+    border-radius: 0;
+    background-color: #9165ab !important;
+    color: white;
+    font-family:'Anaheim', sans-serif, helvetica;
+    padding-left: 1.2rem;
+    padding-right:1.2rem;
+    font-size: 1.05rem;
+    margin-left:-1vw; 
+    text-transform: uppercase;
+}
+.kbin_btn-orange{
+    border-radius: 0;
+    background-color: orangered !important;
+    color: white;
+    font-family:'Anaheim', sans-serif, helvetica;
+    padding-left: 1.5rem;
+    padding-right:1.5rem;
+    font-size: 1.05rem;
+
+    text-transform: uppercase;
+}
+
+.kbin_nav-item{
+    border-radius: 0;
+    font-size: 1.0rem;
+
+    border-color: #9165ab;
+}
+
+.kbin_nav-item.active{
+    border-bottom-style: solid;
+    border-bottom-width: 0.2rem;
+    border-bottom-color:  #3c1048;
+    font-weight: bold;
+    
+}
+.kbin_nav-item a{
+    color: #3c1048;
+    font-family: 'Anaheim', sans-serif, helvetica;
+    
+}
+.kbin_form-control{
+    border-radius: 0;
+    font-size: 1.05rem;
+    padding-left: 1.5rem;
+    padding-right:1.5rem;
+    border-color: rgba(145,101,171,0.7);
+    
+}
+.kbin_form-control::placeholder{
+    color:rgba(145,101,171,0.5);
+}
+
+
+
+
+
+.kbin_collaboratory-author-name {
+    text-transform: uppercase;
+    color: #3c1048;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+}
+
+.kbin_badge-primary{
+    background-color: #3c1048;
+    color: white;
+
+    text-transform: uppercase;
+    font-family: 'Anaheim', sans-serif, helvetica;
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+.kbin_badge-secondary{
+    background-color: #9165ab;
+    color:white;
+    font-family: 'Anaheim', sans-serif, helvetica;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+.kbin_badge-primary a{
+    color: #3c1048;
+    
+}
+
+
+
+
+
+.kbin_long-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1.2rem;
+    opacity: 0.9;
+}
+
+.kbin_page-mast-back {
+    
+    height: 50vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.kbin_page-mast-front {
+    top: 15vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: #3c1048;
+    opacity: 0.9;
+
+}
+.kbin_site-footer {
+    font-family: 'Roboto', sans-serif;
+    background-color: #efefef;
+}
+
+.kbin_site-footer p {
+
+    color: #808080
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.kbin_h3 {
+    font-family: 'Anaheim', sans-serif, helvetica;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    color: #3b1347;
+}
+
+
+.kbin_login-bar {
+    opacity: 0.9;
+}
+
+.kbin_logged-in-info {
+
+    background-color: #3c1048;
+    color: whitesmoke;
+}
+
+
+        
+
+.kbin_teacher-name {
+    color: whitesmoke;
+    font-family: 'Anaheim', sans-serif, helvetica;
+    text-transform: uppercase;
+}
+
+.kbin_teacher-info {
+    color: #9165ab;
+    font-family: 'Anaheim', sans-serif, helvetica;
+
+}
