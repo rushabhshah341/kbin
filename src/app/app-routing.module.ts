@@ -8,7 +8,8 @@ import { RbiComponent } from './rbi/rbi.component';
 import { KfComponent } from './kf/kf.component';
 import { PostCollaboratoryComponent } from './post-collaboratory/post-collaboratory.component';
 import { ContributorsComponent } from './contributors/contributors.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './account/login/login.component';
+import { SignupComponent } from './account/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -44,6 +45,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }

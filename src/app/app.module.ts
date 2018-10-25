@@ -13,9 +13,8 @@ import { RbiComponent } from './rbi/rbi.component';
 import { KfComponent } from './kf/kf.component';
 import { PostCollaboratoryComponent } from './post-collaboratory/post-collaboratory.component';
 import { ContributorsComponent } from './contributors/contributors.component';
-import { LoginComponent } from './login/login.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
-import { SignupComponent } from './signup/signup.component';
+import { AccountModule } from './account/account.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,13 +33,12 @@ const appRoutes: Routes = [
     KfComponent,
     PostCollaboratoryComponent,
     ContributorsComponent,
-    LoginComponent,
-    HeaderLoginComponent,
-    SignupComponent
+    HeaderLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AccountModule
   ],
   providers: [],
   bootstrap: [AppComponent]
