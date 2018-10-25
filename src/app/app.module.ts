@@ -15,6 +15,7 @@ import { PostCollaboratoryComponent } from './post-collaboratory/post-collaborat
 import { ContributorsComponent } from './contributors/contributors.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     PostCollaboratoryComponent,
     ContributorsComponent,
     LoginComponent,
-    HeaderLoginComponent
+    HeaderLoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
