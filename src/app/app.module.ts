@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +15,8 @@ import { PostCollaboratoryComponent } from './post-collaboratory/post-collaborat
 import { ContributorsComponent } from './contributors/contributors.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
 import { AccountModule } from './account/account.module';
+import { Storage } from "./services/storage.service";
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,14 +35,18 @@ const appRoutes: Routes = [
     KfComponent,
     PostCollaboratoryComponent,
     ContributorsComponent,
-    HeaderLoginComponent
+    HeaderLoginComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccountModule
+    AccountModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    Storage
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

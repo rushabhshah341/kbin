@@ -7,6 +7,7 @@ export const environment = {
   subDomain: "kf6-test.rit",
   apiVersion: '1.0',
   runtime: {
+    baseUrl: "https://kf6-test.rit.albany.edu",
     apiUrl: "http://localhost:4024",
     authBaseUrl: 'http://localhost:4024'
     }

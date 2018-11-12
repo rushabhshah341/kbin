@@ -1,13 +1,66 @@
-.kbin_contributions-mast-back {
+#search_box {
+    border-right: 0;
+  }
+  
+  .kbin_badge-header {
+    border-radius: 0px;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-left: 1vw;
+  }
+  
+  .kbin_badge-text {
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+  }
+  
+  @media (min-width: 576px) {
+    .card-columns {
+      column-gap: 1.9rem;
+    }
+  }
+  
+  .card {
+    .card-img-top {
+      border-radius: 0px;
+    }
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.19);
+  }
+  
+  .kbin_contributions-mast-back {
     background-color: #3c1048;
     height: 40vh;
-}
-
-.kbin_contributions-mast-front {
+  }
+  
+  .kbin_contributions-mast-front {
     opacity: 0.8;
     top: 10vh;
-}
-
-.kbin_contributions-mast-search {
+  }
+  
+  .kbin_contributions-mast-search {
     top: 15vh;
-}
+  }
+
+.badge {
+    display: inline-block;
+    padding: 0.9em 1.5em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    // border-radius: .25rem;
+  
+    &:empty {
+      display: none;
+    }
+  }
+  
+  .btn .badge {
+    position: relative;
+    top: -1px;
+  }
