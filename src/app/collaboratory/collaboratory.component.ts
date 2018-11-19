@@ -3,6 +3,7 @@ import { CollaboratoryService } from './collaboratory.service';
 import { ChallengesCount } from '../models/challenges-count';
 import { Challenges } from '../models/challenges';
 import * as _ from "lodash";
+import { ReversePipe } from '../services/reverse.pipe';
 
 @Component({
   selector: 'app-collaboratory',
@@ -35,7 +36,7 @@ export class CollaboratoryComponent implements OnInit {
     this.pager.query = this.makeQuery();
     this.collaboratoryService.getChallenges(this.pager.query)
       .subscribe(challenges => {
-        this.challenges = challenges.reverse();
+        this.challenges = challenges;
         console.log(this.challenges, typeof(challenges));
       });
   }

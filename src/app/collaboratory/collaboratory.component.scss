@@ -26,6 +26,10 @@
   .card {
     .card-img-top {
       border-radius: 0px;
+      width: 100%;
+      height: auto;
+      max-width: 350px;
+      min-height: 260px;
     }
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.19);
   }

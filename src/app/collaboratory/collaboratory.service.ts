@@ -48,6 +48,14 @@ export class CollaboratoryService {
     );
   }
 
+   getInitialNoteCount(challenge){
+    const url = `${environment.runtime.baseUrl}/api/links/notesCount/${challenge.viewId}`;
+      return this.http.get<Challenges>(url,httpOptions).pipe(
+        tap((challenges: Challenges) => console.log(`fetched challenges for id=${challenge.viewId}`)),
+        catchError(this.handleError<Challenges>('getInitialNoteCount'))
+      );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure

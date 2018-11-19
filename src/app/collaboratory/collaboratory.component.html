@@ -35,7 +35,7 @@
 
 </div>
 
-<div class="row search">
+<div class="search">
   <div class="container">
     <app-search-bar></app-search-bar>
   </div>
@@ -56,10 +56,10 @@
 </ul>
 
 <div class="container">
-<div class="row">
+<div class="test">
 <br>
 </div>
-<div class="row justify-content-center">
+<div class="justify-content-center">
 <a href="#" class="badge kbin_badge-primary kbin_badge-header">Computer Science</a>
 <a href="#" class="badge kbin_badge-primary kbin_badge-header">Engineering</a>
 <a href="#" class="badge kbin_badge-primary kbin_badge-header">Mathematics</a>
@@ -93,11 +93,15 @@
             </div>
         </div>
 
-        <img class="card-img-top" src="{{item.files[0]}}" alt="Card image cap">
+        <img class="card-img-top" *ngIf="item.files[0].length > 0; else defaultImage" src="{{item.files[0]}}" alt="Card image cap">
+        <ng-template #defaultImage>
+            <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+        </ng-template>
+        
         <div class="card-body">
             <div class="card-title">
-                <p class="kbin_grey-text">August 07,2018 10:00am</p>
-                <h5>Grade 5 Student reflected on their Experience as Collaborative Knowledge Builders</h5>
+                <!-- <p class="kbin_grey-text">August 07,2018 10:00am</p> -->
+                <h5><a ng-click="viewChallenge(challenge._id)" class="ng-binding"></a>Grade 5 Student reflected on their Experience as Collaborative Knowledge Builders</h5>
             </div>
             <p class="card-text">
                 See how students from Guinderland elementary school 's collorating classrooms described their creative and collaborative
