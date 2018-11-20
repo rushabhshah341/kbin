@@ -17,6 +17,8 @@ import { HeaderLoginComponent } from './header-login/header-login.component';
 import { AccountModule } from './account/account.module';
 import { Storage } from "./services/storage.service";
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CollaboratoryDetailComponent } from './collaboratory/collaboratory-detail/collaboratory-detail.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,13 +38,15 @@ const appRoutes: Routes = [
     PostCollaboratoryComponent,
     ContributorsComponent,
     HeaderLoginComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CollaboratoryDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AccountModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ 
     Storage

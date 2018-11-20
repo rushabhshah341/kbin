@@ -48,6 +48,21 @@ export class CollaboratoryService {
     );
   }
 
+  getChallenge(id: number | String) {
+    const url = `${environment.runtime.baseUrl}/api/challenges/${id}`;
+    return this.http.get<Challenges>(url, httpOptions).pipe(
+      tap((challenge: Challenges) => console.log(`fetched 1 challenge for id=${this.communityId}`)),
+      catchError(this.handleError<Challenges>('getChallenge'))
+    );
+  }
+
+  // getChallenge(id: number | string) {
+  //   return this.getChallenges(query).pipe(
+  //     // (+) before `id` turns the string into a number
+  //     map((challenges: Challenges) => challenges.find(challenge => challenge.id === +id))
+  //   );
+  // }
+
    getInitialNoteCount(challenge){
     const url = `${environment.runtime.baseUrl}/api/links/notesCount/${challenge.viewId}`;
       return this.http.get<Challenges>(url,httpOptions).pipe(

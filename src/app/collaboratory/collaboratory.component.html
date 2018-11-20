@@ -14,9 +14,9 @@
 </div>
 <div class="container ng-scope" ng-if="!user">
   <div class="row justify-content-center top-buffer">
-      <div class="col-9">
+      <div class="col-12">
           <div class="row justify-content-center">
-              <div class="col-12">
+              
                   <p class="text-justify kbin_long-text"><b>
                     The Collaboratory is an open platform to support collaboration on innovative initiatives
                     for research and practice on Knowledge Building. By joining inspiring innovation
@@ -24,8 +24,6 @@
                     and researchers that are exploring the future of Knowledge Building.
                     Read more about each initiative and click on Build On to jump to Knowledge Forum to start contributing!</b>
                   </p>
-              </div>
-
           </div>
       </div>
   </div>
@@ -59,7 +57,7 @@
 <div class="test">
 <br>
 </div>
-<div class="justify-content-center">
+<div class="row justify-content-center">
 <a href="#" class="badge kbin_badge-primary kbin_badge-header">Computer Science</a>
 <a href="#" class="badge kbin_badge-primary kbin_badge-header">Engineering</a>
 <a href="#" class="badge kbin_badge-primary kbin_badge-header">Mathematics</a>
@@ -84,7 +82,7 @@
             <div class="row">
                 <div class="col-8">
                     <span class="kbin_grey-text">Posted By </span>
-                    <span class="kbin_collaboratory-author-name">{{item.author}}</span>
+                    <span class="kbin_collaboratory-author-name">{{item.userName}}</span>
                     <!-- <div class="kbin_grey-text">Professor at University At Albany, NY</div> -->
                 </div>
                 <div class="col-1">
@@ -101,26 +99,24 @@
         <div class="card-body">
             <div class="card-title">
                 <!-- <p class="kbin_grey-text">August 07,2018 10:00am</p> -->
-                <h5><a ng-click="viewChallenge(challenge._id)" class="ng-binding"></a>Grade 5 Student reflected on their Experience as Collaborative Knowledge Builders</h5>
+                <a [routerLink]="['/collaboratory-detail', item._id]" (click)="viewChallenge(item._id)"><h5>{{item.title}}</h5></a>
             </div>
             <p class="card-text">
-                See how students from Guinderland elementary school 's collorating classrooms described their creative and collaborative
-                learning of core scientific topics.
-
+                {{item.description}}
             </p>
         </div>
         <div class="card-footer text-muted">
             <div class="row">
                 <div class="col-4 text-center">
-                    <span class="badge badge-pill kbin_badge-secondary">23</span>
+                    <span class="badge badge-pill kbin_badge-secondary">{{0}}</span>
                     <div class="kbin_badge-text">DESIGN ITERATIONS</div>
                 </div>
                 <div class="col-4 text-center">
-                    <span class="badge badge-pill kbin_badge-secondary">4</span>
+                    <span class="badge badge-pill kbin_badge-secondary">{{0}}</span>
                     <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
                 </div>
                 <div class="col-4 text-center">
-                    <span class="badge badge-pill kbin_badge-secondary">5</span>
+                    <span class="badge badge-pill kbin_badge-secondary">{{0}}</span>
                     <div class="kbin_badge-text">REQUESTS</div>
                 </div>
             </div>

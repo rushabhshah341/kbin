@@ -13,6 +13,7 @@ import { ReversePipe } from '../services/reverse.pipe';
 export class CollaboratoryComponent implements OnInit {
   private challengesTotalCount: ChallengesCount;
   private challenges: Challenges;
+  // private unsubscribe = new Subject<void>();
   private pager: any = {};
   private query: any = {};
   private allChallenges = [];
@@ -32,6 +33,10 @@ export class CollaboratoryComponent implements OnInit {
       });
   }
 
+  viewChallenge(id) {
+  
+
+  }
   getChallenges(): void {
     this.pager.query = this.makeQuery();
     this.collaboratoryService.getChallenges(this.pager.query)
@@ -52,7 +57,7 @@ export class CollaboratoryComponent implements OnInit {
   }
   
 //   this.pager.getStart = function () {
-//   return ((this.pager.page - 1) * this.pager.pagesize) + 1;
+//   return ((this.pager.page - 1)   this.pager.pagesize) + 1;
 // };
 
 // this.pager.getEnd = function () {
@@ -64,5 +69,4 @@ export class CollaboratoryComponent implements OnInit {
 // };
   // this.pager.pagesize = 6;
   // this.pager.page = 1;
-
 }
