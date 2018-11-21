@@ -39,5 +39,5 @@ testem.log
 Thumbs.db
 
 # Documentation folder
-/documentation
+#/documentation
 /src/assets/*.html
