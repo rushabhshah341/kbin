@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CollaboratoryService } from '../collaboratory/collaboratory.service';
+//import { Collaboratory } from '../models/collaboratory';
 
 @Component({
   selector: 'app-search-bar',

@@ -55,7 +55,11 @@ export class CollaboratoryService {
       catchError(this.handleError<Challenges>('getChallenge'))
     );
   }
-
+  
+  getChallengeBySearchTerm(term: string) {
+    const url = `${environment.runtime.baseUrl}/api/challenges/`;
+    return this.http.get<Challenges[]>('',{params: {searchTerm: term}});
+  }
   // getChallenge(id: number | string) {
   //   return this.getChallenges(query).pipe(
   //     // (+) before `id` turns the string into a number

@@ -26,4 +26,7 @@ export class CollaboratoryDetailComponent implements OnInit {
     );
   }
 
+  gotoCollaboratory(challenges: Challenges) {
+    this.router.navigate(['/collaboratory']);
+  }
 }

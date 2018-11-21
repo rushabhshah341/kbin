@@ -24,7 +24,7 @@ export class CollaboratoryComponent implements OnInit {
     this.getChallengesCount();
   }
 
-  getChallengesCount(): void {
+  private getChallengesCount(): void {
     this.collaboratoryService.getChallengesCount()
       .subscribe(challengesCount => {
         this.challengesTotalCount = challengesCount;
@@ -37,7 +37,7 @@ export class CollaboratoryComponent implements OnInit {
   
 
   }
-  getChallenges(): void {
+  private getChallenges(): void {
     this.pager.query = this.makeQuery();
     this.collaboratoryService.getChallenges(this.pager.query)
       .subscribe(challenges => {
@@ -46,7 +46,7 @@ export class CollaboratoryComponent implements OnInit {
       });
   }
 
-  makeQuery(): void {
+  private makeQuery(): void {
     this.query.viewIds = []
     this.query.authors = []
     this.query.communityId = this.id;

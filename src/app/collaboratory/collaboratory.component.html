@@ -90,8 +90,9 @@
                 </div>
             </div>
         </div>
-
-        <img class="card-img-top" *ngIf="item.files[0].length > 0; else defaultImage" src="{{item.files[0]}}" alt="Card image cap">
+        <a [routerLink]="['/collaboratory-detail', item._id]" (click)="viewChallenge(item._id)">
+            <img class="card-img-top" *ngIf="item.files[0].length > 0; else defaultImage" src="{{item.files[0]}}" alt="Card image cap">
+        </a>
         <ng-template #defaultImage>
             <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
         </ng-template>
