@@ -1,0 +1,172 @@
+<div *ngIf="Challenges | async as Challenges">
+    <button class="btn" (click)="gotoCollaboratory(Challenges)">Back</button>
+  <div class="container">
+    <div class="row   justify-content-center ">
+        <div class="col-12 col-md-10 kbin_post-info-bar">
+            <div class="row align-items-center" style="height:100%">
+                <div class="col-12 col-lg-6 align-middle" class="col-12 col-lg-6 align-middle">
+                    <span class="d-block text-center text-lg-left align-bottom kbin_post-title">Discovery Design, Technology, Theory</span>
+                </div>
+                <div class="col-6 col-lg-2 mt-1">
+                    <div class="mx-auto d-block text-sm-left text-md-right ">
+                        <span class="badge kbin_badge-secondary">{{noteCount}}</span> Advances</div>
+                </div>
+                <div class="col-6 col-lg-2 mt-1">
+                    <div class="text-right text-sm-left">
+                        <span class="badge kbin_badge-secondary">{{riseaboveCount}}</span> Requests</div>
+                </div>
+                <div class="col-12 mt-2 col-lg-2">
+                    <button class="btn kbin_btn-primary float-sm-right d-block mx-auto d-lg-none " style="width:100%" (click)="view(Challenges.viewId)">Build On</button>
+                    <button class="btn kbin_btn-primary float-right d-none d-lg-block " (click)="view(Challenges.viewId)">Build On</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /info-bar-->
+    <div class="row  justify-content-center">
+        <div class="col-12 col-md-10 col-lg-9">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <br>
+                    <br>
+                    <h2 class="text-center">{{Challenges.title}}</h2>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Title -->
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-9">
+            <div class="row ">
+                <div class="col-12 col-sm-10">
+                    <div class="kbin_post-author-bar">
+                        <div class="media">
+                            <img class=" mr-3 float-left" src="../assets/img/collaboratory/profile_pic.jpg" style="height:50px;width:50px" alt="Profile Picture">
+                            <div class="media-body align-self-center">
+                                <div class="kbin_collaboratory-author-name mt-0">{{Challenges.userName}}</div>
+                                <!-- <div class="kbin_grey-text">
+                                    Principal of Greenwood high School - Liverpool, UK
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-2 mt-1 mt-sm-0">
+                    <div class="kbin_grey-text">{{Challenges.created}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Author Details -->
+    <!-- <div class="row justify-content-center top-buffer">
+        <div class="col-12 col-md-10 col-lg-9">
+            <div class="row justify-content-center">
+                <div class="col-12 ">
+                    <div class="embed-responsive embed-responsive-21by9" style="width:100%">
+                        <video id="my-video" class="video-js embed-responsive-item vjs-default-skin" controls preload="auto" width="640" height="264"
+                            poster="app/kbin/img/video-poster.png" data-setup="{}">
+                            <source src="app/kbin/video/child.mp4" type='video/mp4'>
+                            <source src="app/kbin/MY_VIDEO.webm" type='video/webm'>
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                        </video>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+    <!-- /Video -->
+    <br>
+    <div class="row justify-content-center top-buffer">
+        <div class="col-12 col-md-10 col-lg-9">
+            <div class="row justify-content-center">
+                <img *ngIf="Challenges.files.length > 0" src={{Challenges.files[0]}} alt="Card image cap">
+                <br>
+                <br>
+                <div class="col-12">
+                  <br><br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Author: </b> {{Challenges.contributionAuthor}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Contribution Date: </b> {{Challenges.contributionDate}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Keywords: </b> {{Challenges.keywords}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Abstract: </b> {{Challenges.abstract}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Description: </b> {{Challenges.description}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Users: </b> {{Challenges.users}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Grade: </b> {{Challenges.grade}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>List of Students: </b> {{Challenges.students}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Location: </b> {{Challenges.location}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Country: </b> {{Challenges.country}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Subject: </b> {{Challenges.subject}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Duration: </b> {{Challenges.duration}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Education: </b> {{Challenges.education}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>References: </b> {{Challenges.references}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Research: </b> {{Challenges.research}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Quotes: </b> {{Challenges.quotes}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Created By: </b> {{Challenges.author}}
+                    </p>
+                    <br>
+                    <p class="text-justify kbin_long-text">
+                        <b>Links: </b> {{Challenges.link}}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

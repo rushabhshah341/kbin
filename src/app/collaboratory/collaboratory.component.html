@@ -1,3 +1,131 @@
-<p>
-  collaboratory works!
-</p>
+<div class="kbin_page-mast-back container-fluid" style="background-image: url('../assets/img/front_page_banners/banner1.jpg');" ng-if="!user">
+  <div class="row align-middle justify-content-center">
+      <div class="col-4 kbin_page-mast-front" style="color: whitesmoke;">
+        <p>
+          <span class="text-center" style="color: rgba(238,64,0,1)">KBIN's Collaboratory</span>
+          is an open global community of practictioners, administrators, policy makers, researchers
+          and engineers explring and advancing innovative ideas in education.
+        </p>
+        <button class="badge kbin_badge-primary kbin_badge-header">How Does it Work</button>
+        <button class="badge kbin_badge-primary kbin_badge-header" style="margin-right: 5px;">Current Open Challenges</button>
+        <button class="btn kbin_btn-orange" style="height:30%;width:20%" (click)="login()">Login</button>
+      </div>
+  </div>
+</div>
+<div class="container ng-scope" ng-if="!user">
+  <div class="row justify-content-center top-buffer">
+      <div class="col-12">
+          <div class="row justify-content-center">
+              
+                  <p class="text-justify kbin_long-text"><b>
+                    The Collaboratory is an open platform to support collaboration on innovative initiatives
+                    for research and practice on Knowledge Building. By joining inspiring innovation
+                    challenges - or creating your own! - you can be part of a worldwide group of educators
+                    and researchers that are exploring the future of Knowledge Building.
+                    Read more about each initiative and click on Build On to jump to Knowledge Forum to start contributing!</b>
+                  </p>
+          </div>
+      </div>
+  </div>
+
+
+
+
+</div>
+
+<div class="search">
+  <div class="container">
+    <app-search-bar></app-search-bar>
+  </div>
+</div>
+<!-- <app-search-bar [driverList]="subscribedChannels" [(results)]="searchResults"></app-search-bar> -->
+
+<ul class="nav justify-content-center">
+  <li class="nav-item kbin_nav-item active">
+      <a class="nav-link " href="#">CURRICULAR AREA</a>
+  </li>
+  <li class="nav-item kbin_nav-item">
+      <a class="nav-link" href="#">CONTEXT</a>
+  </li>
+  <li class="nav-item kbin_nav-item">
+      <a class="nav-link" href="#">LANGUAGE</a>
+  </li>
+
+</ul>
+
+<div class="container">
+<div class="test">
+<br>
+</div>
+<div class="row justify-content-center">
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Computer Science</a>
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Engineering</a>
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Mathematics</a>
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Language arts</a>
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Music</a>
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Science</a>
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Social Studies</a>
+<a href="#" class="badge kbin_badge-primary kbin_badge-header">Teacher Education</a>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<div class="container">
+<div class="card-columns">
+    <!-- Card -->
+    <div class="card" *ngFor="let item of challenges; index as i">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-8">
+                    <span class="kbin_grey-text">Posted By </span>
+                    <span class="kbin_collaboratory-author-name">{{item.userName}}</span>
+                    <!-- <div class="kbin_grey-text">Professor at University At Albany, NY</div> -->
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn kbin_btn-secondary">Build On</button>
+                </div>
+            </div>
+        </div>
+        <a [routerLink]="['/collaboratory-detail', item._id]" (click)="viewChallenge(item._id)">
+            <img class="card-img-top" *ngIf="item.files[0].length > 0; else defaultImage" src="{{item.files[0]}}" alt="Card image cap">
+        </a>
+        <ng-template #defaultImage>
+            <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Card image cap">
+        </ng-template>
+        
+        <div class="card-body">
+            <div class="card-title">
+                <!-- <p class="kbin_grey-text">August 07,2018 10:00am</p> -->
+                <a [routerLink]="['/collaboratory-detail', item._id]" (click)="viewChallenge(item._id)"><h5>{{item.title}}</h5></a>
+            </div>
+            <p class="card-text">
+                {{item.description}}
+            </p>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <span class="badge badge-pill kbin_badge-secondary">{{0}}</span>
+                    <div class="kbin_badge-text">DESIGN ITERATIONS</div>
+                </div>
+                <div class="col-4 text-center">
+                    <span class="badge badge-pill kbin_badge-secondary">{{0}}</span>
+                    <div class="kbin_badge-text">RESEARCH ADVANCEMENTS</div>
+                </div>
+                <div class="col-4 text-center">
+                    <span class="badge badge-pill kbin_badge-secondary">{{0}}</span>
+                    <div class="kbin_badge-text">REQUESTS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /Card columns -->
+
+
+</div>

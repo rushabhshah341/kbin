@@ -10,6 +10,7 @@ import { PostCollaboratoryComponent } from './post-collaboratory/post-collaborat
 import { ContributorsComponent } from './contributors/contributors.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignupComponent } from './account/signup/signup.component';
+import { CollaboratoryDetailComponent } from './collaboratory/collaboratory-detail/collaboratory-detail.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
     path: 'collaboratory',
     component: CollaboratoryComponent,
     pathMatch: 'full'
+  },
+  { path: 'collaboratory-detail/:id',
+    component: CollaboratoryDetailComponent,
+    data: { animation: 'collboratory' }
   },
   {
     path: 'rbi',
