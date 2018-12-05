@@ -10,10 +10,18 @@ export class Challenges {
     students: string;
     location: string;
     country: string;
+    subject: string;
+    duration: string;
+    education:string;
     references: string;
+    research: string;
     quotes: string;
     link: string;
     viewId: any;
     files: string[];
     authors: string[];
+    riseaboveCount: string;
+    notesCount: string;
+    communityId: string;
+    created: string;
 }

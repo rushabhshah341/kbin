@@ -8,6 +8,7 @@ export const environment = {
   apiVersion: '1.0',
   runtime: {
     baseUrl: "https://kf6-test.rit.albany.edu",
+    stageUrl: "https://kf6-stage.rit.albany.edu",
     apiUrl: "http://localhost:4024",
     authBaseUrl: 'http://localhost:4024'
     }

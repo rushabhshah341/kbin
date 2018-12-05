@@ -8,6 +8,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { ChallengesCount } from '../models/challenges-count';
 import { Challenges } from '../models/challenges';
 import { url } from 'inspector';
+import { Link } from '../models/link';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'text/html'})
@@ -20,14 +21,6 @@ export class CollaboratoryService {
   constructor(private http: HttpClient,
     private localStorage: Storage) { }
     
-  //var id = "5974e9a2640bb91f7c879187";
-  // test site
-  // var id = "558abcb01f3b621e75d9bc08";
-  //stage site
-  // var id = "5acd7b9b2808394fbdd33c23";
-  // desktop
-  // var id ="5b727baf7eca5140cea7555b";
-  // var id = "5a57d22b0fe3451d0cb34f79";
   private communityId: string = "5acd7b9b2808394fbdd33c23";
   private id: string = "5b727baf7eca5140cea7555b";
   // private query: any = {};
@@ -67,12 +60,25 @@ export class CollaboratoryService {
   //   );
   // }
 
-   getInitialNoteCount(challenge){
-    const url = `${environment.runtime.baseUrl}/api/links/notesCount/${challenge.viewId}`;
+   getInitialNoteCount(viewId: string){
+    const url = `${environment.runtime.stageUrl}/api/links/notesCount/${viewId}`;
       return this.http.get<Challenges>(url,httpOptions).pipe(
-        tap((challenges: Challenges) => console.log(`fetched challenges for id=${challenge.viewId}`)),
+        tap((challenges: Challenges) => console.log(`fetched challenges for id=${viewId}`)),
         catchError(this.handleError<Challenges>('getInitialNoteCount'))
       );
+  }
+
+  createLink(fromId, toId, type, data, success, failure){
+    var link = {} as Link;
+    link.from = fromId;
+    link.to = toId;
+    link.type = type;
+    link.data = data;
+    const url = `${environment.runtime.stageUrl}/api/links/`;
+    return this.http.post<Link>(url,{ query: link } ,httpOptions).pipe(
+      tap((link: Link) => console.log(`New Link Created`)),
+      catchError(this.handleError<Link>('postedLinks'))
+    );
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

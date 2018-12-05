@@ -77,13 +77,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' : 'data-target="#xs-components-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' : 'data-target="#xs-components-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' : 'id="xs-components-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' : 'id="xs-components-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' }>
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
                                         </li>
@@ -95,6 +95,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         </li>
                                         <li class="link">
                                             <a href="components/ContributorsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">ContributorsComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/CreateChallengeComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">CreateChallengeComponent</a>
                                         </li>
                                         <li class="link">
                                             <a href="components/FooterComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">FooterComponent</a>
@@ -127,13 +130,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#injectables-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' : 'data-target="#xs-injectables-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' }>
+                                    ${ isNormalMode ? 'data-target="#injectables-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' : 'data-target="#xs-injectables-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' }>
                                     <span class="icon ion-md-arrow-round-down"></span>
                                     <span>Injectables</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="injectables-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' : 'id="xs-injectables-links-module-AppModule-8baf0a3fca8827293eef7c44ab1e4982"' }>
+                                    ${ isNormalMode ? 'id="injectables-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' : 'id="xs-injectables-links-module-AppModule-99e58fe009a7fe33eba1ad7ee6c4ca26"' }>
                                         <li class="link">
                                             <a href="injectables/Storage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>Storage</a>
                                         </li>
@@ -165,6 +168,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     </li>
                     <li class="link">
                         <a href="classes/DeepWrapper.html" data-type="entity-link">DeepWrapper</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Link.html" data-type="entity-link">Link</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/NotesCount.html" data-type="entity-link">NotesCount</a>
                     </li>
             </ul>
         </li>
