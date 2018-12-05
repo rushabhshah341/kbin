@@ -17,11 +17,13 @@ export class CollaboratoryComponent implements OnInit {
   private pager: any = {};
   private query: any = {};
   private allChallenges = [];
+  private user: boolean = false;
   private id: string = "5acd7b9b2808394fbdd33c23";
   constructor(private collaboratoryService: CollaboratoryService) { }
 
   ngOnInit() {
     this.getChallengesCount();
+    this.user = true;
   }
 
   private getChallengesCount(): void {
@@ -33,10 +35,11 @@ export class CollaboratoryComponent implements OnInit {
       });
   }
 
-  viewChallenge(id) {
+  // viewChallenge(id) {
   
 
-  }
+  // }
+
   private getChallenges(): void {
     this.pager.query = this.makeQuery();
     this.collaboratoryService.getChallenges(this.pager.query)
@@ -55,6 +58,7 @@ export class CollaboratoryComponent implements OnInit {
     this.query.words = [];
     return this.query;
   }
+  
   
 //   this.pager.getStart = function () {
 //   return ((this.pager.page - 1)   this.pager.pagesize) + 1;

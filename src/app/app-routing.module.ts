@@ -11,6 +11,7 @@ import { ContributorsComponent } from './contributors/contributors.component';
 import { LoginComponent } from './account/login/login.component';
 import { SignupComponent } from './account/signup/signup.component';
 import { CollaboratoryDetailComponent } from './collaboratory/collaboratory-detail/collaboratory-detail.component';
+import { CreateChallengeComponent } from './collaboratory/create-challenge/create-challenge.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
     component: CollaboratoryDetailComponent,
     data: { animation: 'collboratory' }
   },
+{ path: 'create-challenge',
+  component: CreateChallengeComponent,
+  pathMatch: 'full'
+},
   {
     path: 'rbi',
     component: RbiComponent,

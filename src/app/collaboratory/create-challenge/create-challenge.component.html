@@ -1,0 +1,135 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+    <h5 class="text-center">Create an Open Innovation Challenge</h5>  
+  </div>
+  <br>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+          <form class="form"  name="challengeForm" #challengeForm="ngForm" (ngSubmit)="onSubmit(challengeForm)"> 
+            <!-- Form Value: {{challengeForm.value | json}} 
+            Form Status: {{challengeForm.status | json }} -->
+              <div class="form-group">
+                  <label for="titleInput">Title</label>
+                  <input type="text" name="title" ngModel class="form-control kbin_form-control" id="titleInput" aria-describedby="Titlehelp" placeholder="Please write a title for your challenge" required>
+              </div>
+              <!-- <div *ngIf="challengeForm.controls['title'].invalid && (challengeForm.controls['title'].dirty || challengeForm.controls['title'].touched)" class="alert alert-danger">
+                <div *ngIf="challengeForm.controls['title'].errors.required">
+                  Title is required.
+                </div>
+              </div> -->
+              <div class="form-group">
+                <label for="keywordInput">Keywords</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="keywords" ngModel class="form-control kbin_form-control" id="keywordInput" aria-describedby="keywordhelp" placeholder="Please enter some keywords">
+              </div>
+              <div class="form-group">
+                      <label for="descriptionInput">Summary</label>
+                      <textarea rows="3" name="summary" ngModel class="form-control kbin_form-control" id="descriptionInput" aria-describedby="descriptionHelp" placeholder="Describe your Challenge" required> </textarea>
+              </div>
+              <div class="form-group">
+                <label for="abstractInput">Abstract</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <textarea rows="3" name="abstract" ngModel class="form-control kbin_form-control" id="abstractInput" aria-describedby="abstractHelp" placeholder="Describe your Abstract"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="userInput">Users</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="users" ngModel class="form-control kbin_form-control" id="userInput" aria-describedby="userHelp" placeholder="List any users">
+              </div>
+              <div class="form-group">
+                <label for="gradeInput">Grade</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="grade" ngModel class="form-control kbin_form-control" id="gradeInput" aria-describedby="gradeHelp" placeholder="Input a grade">
+              </div>
+              <div class="form-group">
+                <label for="studentsInput">Number of Students</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="numberofstudents" ngModel class="form-control kbin_form-control" id="studentsInput" aria-describedby="studentsHelp" placeholder="List the number of students">
+              </div>
+              <div class="form-group">
+                <label for="locationInput">Location</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="location" ngModel class="form-control kbin_form-control" id="locationInput" aria-describedby="locationHelp" placeholder="Input the location">
+              </div>
+              <div class="form-group">
+                <label for="countryInput">Country</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="country" ngModel class="form-control kbin_form-control" id="countryInput" aria-describedby="countryHelp" placeholder="Input the country">
+              </div>
+              <div class="form-group">
+                <label for="educatorInput">Educator(s)</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <textarea rows="3" name="educators" ngModel class="form-control kbin_form-control" id="educatorInput" aria-describedby="educatorHelp" placeholder="List any educators"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="subjectInput">Subject</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="subject" ngModel class="form-control kbin_form-control" id="subjectInput" aria-describedby="subjectHelp" placeholder="Input the subject">
+              </div>
+              <div class="form-group">
+                <label for="durationInput">Duration</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="duration" ngModel class="form-control kbin_form-control" id="durationInput" aria-describedby="durationHelp" placeholder="Input the duration">
+              </div>
+              <div class="form-group">
+                <label for="referenceInput">References</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <textarea rows="3" name="references" ngModel class="form-control kbin_form-control" id="referenceInput" aria-describedby="referenceHelp" placeholder="List any references"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="researchInput">Research Findings</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <textarea rows="5" name="researchfindings" ngModel class="form-control kbin_form-control" id="researchInput" aria-describedby="researchHelp" placeholder="Input the research findings"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="quoteInput">Quotes</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <textarea rows="5" name="quotes" ngModel class="form-control kbin_form-control" id="quoteInput" aria-describedby="quoteHelp" placeholder="List any quotes"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="authorInput">About the Author</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <textarea rows="5" name="abouttheauthor" ngModel class="form-control kbin_form-control" id="authorInput" aria-describedby="authorHelp" placeholder="Describe the author"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="languageInput">Language</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <input type="text" name="language" ngModel class="form-control kbin_form-control" id="languageInput" aria-describedby="languageHelp" placeholder="Input the language">
+              </div>
+              <div class="form-group">
+                <label for="linkInput">Links</label>
+                <span class="kbin_grey-text">(OPTIONAL)</span>
+                <textarea rows="5" name="links" ngModel ng-model="link" class="form-control kbin_form-control" id="linkInput" aria-describedby="linkHelp" placeholder="List any links"></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="descriptionInput">External Resources</label>
+                  <span class="kbin_grey-text">(OPTIONAL)</span>
+                  <div style="padding: 10px;" class="input-group col-md-12">
+                      <input type="file" name="externalresources" ngModel ng-file-select="onFileSelect($files)" class="form-control kbin_form-control" id="descriptionInput" aria-describedby="descriptionHelp" placeholder="Add URL of external images"/>
+                      <!-- <div class="input-group-prepend">
+                          <button class="btn kbin_btn-primary" ng-click="addFile()">Add</button>
+                      </div> -->
+                  </div>
+              </div>
+              <div>
+                <h4 id="attached" *ngIf="success">Attached!</h4>
+              </div>
+              <br>
+              <div class="row justify-content-center mb-3">
+                  <div class="col-12 col-lg-10 d-flex justify-content-end">
+                      <button type="submit" class="btn btn-light kbin_btn-light float-right" (click)="cancel()">Cancel</button>
+                      
+                      <button type="submit" class="btn kbin_btn-orange float-right ml-4" [disabled]="!challengeForm.valid">Submit</button>
+                  </div>
+              </div>
+            </form>
+      </div>
+  </div>
+  <br>
+
+</div>

@@ -84,6 +84,7 @@ import { ContributorsComponent } from &#x27;./contributors/contributors.componen
 import { LoginComponent } from &#x27;./account/login/login.component&#x27;;
 import { SignupComponent } from &#x27;./account/signup/signup.component&#x27;;
 import { CollaboratoryDetailComponent } from &#x27;./collaboratory/collaboratory-detail/collaboratory-detail.component&#x27;;
+import { CreateChallengeComponent } from &#x27;./collaboratory/create-challenge/create-challenge.component&#x27;;
 
 const routes: Routes &#x3D; [
   {
@@ -100,6 +101,10 @@ const routes: Routes &#x3D; [
     component: CollaboratoryDetailComponent,
     data: { animation: &#x27;collboratory&#x27; }
   },
+{ path: &#x27;create-challenge&#x27;,
+  component: CreateChallengeComponent,
+  pathMatch: &#x27;full&#x27;
+},
   {
     path: &#x27;rbi&#x27;,
     component: RbiComponent,

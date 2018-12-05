@@ -18,7 +18,8 @@ import { AccountModule } from './account/account.module';
 import { Storage } from "./services/storage.service";
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CollaboratoryDetailComponent } from './collaboratory/collaboratory-detail/collaboratory-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateChallengeComponent } from './collaboratory/create-challenge/create-challenge.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,14 +40,16 @@ const appRoutes: Routes = [
     ContributorsComponent,
     HeaderLoginComponent,
     SearchBarComponent,
-    CollaboratoryDetailComponent
+    CollaboratoryDetailComponent,
+    CreateChallengeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AccountModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ 
     Storage
