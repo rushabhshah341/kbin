@@ -53,8 +53,8 @@ export class CollaboratoryComponent implements OnInit {
     this.query.viewIds = []
     this.query.authors = []
     this.query.communityId = this.id;
-    this.query.page = this.pager.page;
-    this.query.pagesize = this.pager.pagesize;
+    this.query.page = 0;
+    this.query.pagesize = 0;
     this.query.words = [];
     return this.query;
   }

@@ -5,70 +5,84 @@ import { Challenges } from '../../models/challenges';
 import { createQuery } from '@angular/core/src/view/query';
 import { Options } from 'selenium-webdriver/ie';
 import { CollaboratoryService } from '../collaboratory.service';
-
+import { httpFactory } from '@angular/http/src/http_module';
+import { Community } from '../../models/community';
 @Component({
   selector: 'app-create-challenge',
   templateUrl: './create-challenge.component.html',
   styleUrls: ['./create-challenge.component.scss']
 })
 export class CreateChallengeComponent implements OnInit {
-  private communityId: any;
+  private communityId: any = "5b727baf7eca5140cea7555b";
   private profileForm: any;
   private challenges = {} as Challenges;
   private challengeQuery: any = {};
   private createMyView: any = {};
-  private userName = "test1";
+  private userName = "nchaudhari";
   private firstName = "test";
   private lastName = "test";
   private authorId = "5a8f24012bec142388337892";
+  private viewId: string = "";
 
   constructor(private router: Router,
-              private collaboratoryService: CollaboratoryService) {
-  }
+              private collaboratoryService: CollaboratoryService) {              
+              }
 
   ngOnInit() {
+    console.log("hhhehehehe");
+    this.collaboratoryService.getMeAsAuthor().subscribe(Author => {
+      this.authorId = Author._id;
+      this.firstName = Author.firstName;
+      this.lastName = Author.lastName;
+    });
+
   }
 
+
   onSubmit(challengeForm) {
-    // TODO: Use EventEmitter with form value
     if (challengeForm.status == "VALID") {
       this.communityId = "5acd7b9b2808394fbdd33c23";
       this.challengeQuery = this.creatChallengeComponent(challengeForm);
-      var success = function(c) {
-        var communityId = c.communityId;
-        delete c.communityId;
-
-        this.createLink = this.collaboratoryService.createLink("5b727bb07eca5140cea7555e", c.viewId, 'contains', {x: 130, y: 130});  
-        // $http.post('/api/challenges/' + communityId, {
-        //     challenge: c
-        // }).success(function(result){
-        //     //console.log(result);
-        //     this.router.navigate(['/collaboratory']);
-        // }).error(function(err){
-        //     console.log(err);
-        // });
-      }
-    
-      var createView = function(challengeForm, success, noregistration, options)
-      // this.createMyView = this.createView(this.challengeQuery.value.title, , false, Options);
-
+       this.createMyView = this.createView(this.challengeQuery.title, false, this.challengeQuery);
     } else{
       window.alert("Make sure all the required fields are filled in");
     }
     challengeForm.reset();
   };
 
-  private createView(challengeForm, success,noregistration,options) {
-
-
-    var newobj = {
+  private createView(challengeForm, noregistration,options) {
+    var newObj: any = {
       communityId: this.communityId,
       type: 'View',
-      title: challengeForm.value.title,
+      title: challengeForm.title,
       authors: [this.authorId],
       status: 'active',
       permission: 'public',
     }
+    this.collaboratoryService.postView(newObj).subscribe(View => {
+      //this.viewId = View._id;
+      this.viewId = "5c106d2dc40f973c397f43f4";  
+      this.collaboratoryService.updateCommunityWithView().subscribe(community => {
+          community.views.push(View._id);
+          this.collaboratoryService.putCommunityWithView(community).subscribe( success => {
+            console.log("Successfully uploaded updated views!", community);
+            var link: any = {
+              from: "5b727bb07eca5140cea7555e",
+              to: this.viewId,
+              type: "contains",
+              data: {
+                x: 130,
+                y: 130
+              }
+            };
+            this.collaboratoryService.createLink(link).subscribe();
+            this.collaboratoryService.postChallenges(this.challengeQuery).subscribe();
+ 
+          });
+        });
+    });
+
+
   }
 
   private creatChallengeComponent(challengeForm) {
