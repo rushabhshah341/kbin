@@ -44,11 +44,14 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/contributors" routerLinkActive="active" >CONTRIBUTORS</a>
             </li>
+            <ng-template #notShow>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!userLoggedIn">LOGIN</a>
+                </li>
+            </ng-template>
+
             <li class="nav-item">
-                <a class="nav-link" routerLink="/login" routerLinkActive="active" >LOGIN</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" (click)="logoutUser()" *ngIf="userLoggedIn">Logout</a>
+                <a class="nav-link" (click)="logout()" *ngIf="userLoggedIn; else notShow">LOGOUT</a>
             </li> 
         </ul>
     </div>
