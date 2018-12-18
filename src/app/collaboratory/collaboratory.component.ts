@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CollaboratoryService } from './collaboratory.service';
 import { ChallengesCount } from '../models/challenges-count';
 import { Challenges } from '../models/challenges';
+import { Storage } from '../services/storage.service';
 import * as _ from "lodash";
 import { ReversePipe } from '../services/reverse.pipe';
 
@@ -13,17 +14,27 @@ import { ReversePipe } from '../services/reverse.pipe';
 export class CollaboratoryComponent implements OnInit {
   private challengesTotalCount: ChallengesCount;
   private challenges: Challenges;
+  private token: string;
   // private unsubscribe = new Subject<void>();
   private pager: any = {};
   private query: any = {};
   private allChallenges = [];
   private user: boolean = false;
   private id: string = "5acd7b9b2808394fbdd33c23";
-  constructor(private collaboratoryService: CollaboratoryService) { }
+  constructor(private collaboratoryService: CollaboratoryService,
+              private localStorage: Storage) { }
 
   ngOnInit() {
     this.getChallengesCount();
-    this.user = true;
+    this.localStorage.getItem('token').then(value => {
+        this.token = value;
+        if(this.token == "undefined" || this.token === null){
+          this.user = false;
+        } else {
+          this.user = true;
+        }
+
+    });
   }
 
   private getChallengesCount(): void {

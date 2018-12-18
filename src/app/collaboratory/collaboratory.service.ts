@@ -14,20 +14,29 @@ import { View } from '../models/view';
 import { Community } from '../models/community';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json','Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjJhOGRiMjY3MDZlYjAyMmZlMTA1N2IiLCJpYXQiOjE1NDQ1ODAzMjksImV4cCI6MTU0NDU5ODMyOX0.O48vIPS9zE59pmnb4sthF3_fQWJCXviDccRflvFg83s'})
+  headers: new HttpHeaders({ 
+    'Content-Type': 'application/json', 
+    'Accept': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem(('token'))}`,
+  })
 };
 
 
 @Injectable({ providedIn: 'root' })
 export class CollaboratoryService {
-  
-  constructor(private http: HttpClient,
-    private localStorage: Storage) { }
-    
   private communityId: string = "5acd7b9b2808394fbdd33c23"; 
   private id: string = "5b727baf7eca5140cea7555b";
-  private token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YjJhOGRiMjY3MDZlYjAyMmZlMTA1N2IiLCJpYXQiOjE1NDQ1NzQ0NzIsImV4cCI6MTU0NDU5MjQ3Mn0.OSjZFh5QgFD_Tncv12EaS6giD_8bxUGc5yjTgi2rVRc";
+  private token:string;
 
+  constructor(private http: HttpClient,
+    private localStorage: Storage) { 
+      this.localStorage.getItem('token').then(value => {
+        this.token = value;
+      });
+      
+    }
+    
+  
   getChallengesCount (): Observable<ChallengesCount> {
     const url = `${environment.runtime.baseUrl}/api/challenges/count/${this.communityId}`;
     return this.http.post<ChallengesCount>(url, httpOptions).pipe(
@@ -137,4 +146,3 @@ export class CollaboratoryService {
     };
   }
 }
- 
