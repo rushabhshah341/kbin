@@ -39,7 +39,7 @@ export class LoginService {
         console.log(`fetched token for ${username}`);
         if (user && user.token) {
           // this.localStorage.setItem('currentUser', JSON.stringify(user));
-          this.localStorage.setItem('token', JSON.stringify(user.token));
+          this.localStorage.setItem('token', user.token);
         }
       }),
       catchError(this.handleError<User>('login'))

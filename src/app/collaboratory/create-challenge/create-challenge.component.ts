@@ -29,7 +29,6 @@ export class CreateChallengeComponent implements OnInit {
               }
 
   ngOnInit() {
-    console.log("hhhehehehe");
     this.collaboratoryService.getMeAsAuthor().subscribe(Author => {
       this.authorId = Author._id;
       this.firstName = Author.firstName;
