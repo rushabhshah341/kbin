@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Challenges } from '../../models/challenges';
-import { createQuery } from '@angular/core/src/view/query';
+//import { createQuery } from '@angular/core/src/view/query';
 import { Options } from 'selenium-webdriver/ie';
 import { CollaboratoryService } from '../collaboratory.service';
 import { httpFactory } from '@angular/http/src/http_module';
