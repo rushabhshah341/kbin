@@ -1,3 +1,4 @@
+Note: Please update Angular CLI and Angular core and do npm i and npm update if needed.
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
